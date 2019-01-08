@@ -7,20 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Alert,AsyncStorage, Button,
-        FlatList, TouchableOpacity
-
+import {Platform, StyleSheet, Text, View, Alert, Button,
         } from 'react-native';
-
-var flag = 20;
-var muzammil = [12,23,34,12,45,56];
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -29,69 +17,26 @@ export default class App extends Component<Props> {
   // https://aboutreact.com/react-native-application-life-cycle-of/
 
   constructor() {
-    super();
 
+    // Construction will run at first
+
+    super();
     this.state={
-        bookArray:['hasnain','hasan','ABC'],
-        newVar:'0'
+        // bookArray:['hasnain','hasan','ABC'],
+        // newVar:'0'
       }
   }
 
   componentDidMount() {
 
-    flag = 80;
-    this.setState({newVar:20});
+    // After Constructor ComponentDidmountwillRun
 
-    // console.log('componentDidMount called.');
-
-//  this.setState({newVar:1});
-
-  // Alert.alert('Did Mount' + this.state.newVar);
-
-  AsyncStorage.getItem("login").then((value) => {
-  if (value == null) {
-  }else{
   }
-}
-).done();
-
-AsyncStorage.getItem("password").then((value) => {
-
-if (value == null) {
-
-}else{
-
-}
-
-}
-).done();
-
-    AsyncStorage.setItem('login', 'abc');
-    AsyncStorage.setItem('password', '123');
-    this.yasirFunction();
-  }
-
-
 
   componentWillMount() {
 
+  // Note: Before running ComponentWillMount render() function will be called
 
-    flag = 50;
-
-
-    // console.log('componentWillMount called.');
-    // Alert.alert('Will Mount = ');
-  }
-
-
-  yasirFunction(){
-    // Alert.alert ('Yasir Function');
-    this.newFunction();
-  }
-
-  newFunction(){
-    // Alert.alert('str = ' + this.state.bookArray[2]);
-    // this.setState({newVar:1});
   }
 
     componentWillReceiveProps(nextProp) {
@@ -127,26 +72,6 @@ if (value == null) {
       console.log('componentDidCatch called.');
     }
 
-
-
-// callSomeFunction(index){
-//
-//   Alert.alert('Hello '+ this.state.bookArray[index]);
-//
-// }
-
-
-  //
-  // wordSelected(index){
-  //
-  //   Alert.alert('Test is = '+index);
-  //
-  // }
-
-
-
-
-
   render() {
     return (
 
@@ -164,9 +89,6 @@ if (value == null) {
 
     );
   }
-
-
-
 }
 
 const styles = StyleSheet.create({
@@ -175,12 +97,6 @@ const styles = StyleSheet.create({
     backgroundColor:'#4286f4',
     flex:1,
     flexDirection:'row',
-    // justifyContent: 'center',
-    // alignItems:'center'
-
-    // justifyContent: 'flex-end',
-    // alignItems:'flex-start'
-
     },
 
   textStyle:{
@@ -218,6 +134,4 @@ const styles = StyleSheet.create({
     // flexGrow: 1,
     // alignSelf: 'flex-start',
   },
-
-
 });
